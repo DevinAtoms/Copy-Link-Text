@@ -1,0 +1,22 @@
+{
+  "name": "copy_link_text",
+  "version": "1.0.0",
+  "description": "",
+  "main": "background.js",
+  "scripts": {
+    "prebuild": "npx rimraf build",
+    "build": "tsc --build",
+    "postbuild": "cpy manifest.json \"build\" && cpy \"static/*\" \"build/static\""
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@types/chrome": "^0.0.268",
+    "typescript": "^5.4.5",
+    "webextension-polyfill": "^0.12.0"
+  },
+  "devDependencies": {
+    "@types/webextension-polyfill": "^0.10.7",
+    "rimraf": "^5.0.7"
+  }
+}
