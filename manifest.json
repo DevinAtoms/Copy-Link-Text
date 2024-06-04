@@ -5,20 +5,27 @@
     "description": "Chrome Extension",
     "version": "1.0",
     "author": "Devin Adams",
+    "action": {
+      "default_icon": {
+        "16": "static/icon16.png",
+        "24": "static/icon24.png",
+        "32": "static/icon32.png"
+      }
+    },
     "permissions": [
-        "scripting",
-        "contextMenus",
-        "activeTab",
-        "tabs"
+        "contextMenus"
     ],
+    "icons": {
+      "16": "static/icon16.png"
+    },
     "background": {
         "service_worker": "background.js",
         "type": "module"
     },
     "content_scripts": [
-        {
-          "matches": ["<all_urls>"],
-          "js": ["content-script.js"]
-        }
-      ]
+      {
+        "matches": ["<all_urls>"],
+        "js": ["content-script.js"]
+      }
+    ]
 }

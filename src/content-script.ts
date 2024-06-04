@@ -4,8 +4,7 @@ document.addEventListener("contextmenu", function(event){
     element = event.target as HTMLElement;
 });
 
-chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
-    const response = element.innerText
-    console.log(response)
-    sendResponse(response);
+chrome.runtime.onMessage.addListener(function() {
+    const text = element.innerText
+    navigator.clipboard.writeText(text)
 });
